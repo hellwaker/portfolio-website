@@ -1,5 +1,11 @@
-let http = require("http");
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('Hello World!');
-}).listen(8080);git
+const express = require("express");
+const app = express();
+const port = 8080;
+
+app.get('/', (req, res) => {
+    res.send("Express Hello World!");
+});
+
+app.listen(port, () => {
+    console.log("Example app listening at http://localhost:${port}");
+});
